@@ -17,12 +17,7 @@ A util for discord.py bots that allow passing flags into commands.
 
 To install, run the following command:
 ```
-pip install discord-flags
-```
-
-You can install the legacy parser by running:
-```
-pip install discord-flags==1.5.2
+pip install alt-discord-flags
 ```
 
 **2.1.0 changes how signatures appear. If you wish to use
