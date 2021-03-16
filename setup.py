@@ -1,6 +1,6 @@
 from setuptools import setup
 
-version = "2.1.1"
+version = "0.0.1"
 
 with open("README.md") as f:
     readme = f.read()
@@ -9,10 +9,10 @@ with open("requirements.txt") as f:
     requirements = f.read().split("\n")
 
 setup(
-    name="discord-flags",
-    author="XuaTheGrate",
+    name="alt-discord-flags",
+    author="Circuit",
     version=version,
-    url="https://github.com/XuaTheGrate/Flag-Parsing",
+    url="https://github.com/CircuitsBots/Flag-Parsing",
     packages=['discord.ext.flags'],
     license='MIT',
     description="A Discord.py extension allowing you to pass flags as arguments.",
