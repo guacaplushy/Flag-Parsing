@@ -48,7 +48,10 @@ class FlagCommand(commands.Command):
         if not hasattr(self.callback, '_def_parser'):
             return
         arg = ctx.view.read_rest()
-        namespace = self.callback._def_parser.parse_args(shlex.split(arg), ctx=ctx)
+        try:
+            namespace = self.callback._def_parser.parse_args(shlex.split(arg), ctx=ctx)
+        except ValueError:
+            raise commands.ExpectedClosingQuoteError("quote")
         flags = vars(namespace)
 
         async def do_convertion(value):
