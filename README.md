@@ -28,7 +28,7 @@ bot = commands.Bot("!")
 @flags.add_flag("--string", default="hello!")
 @flags.add_flag("--user", type=discord.User)
 @flags.add_flag("--thing", type=bool)
-@flags.command()
+@flags.command(ignore_unknown_args=True)  # add this kwarg if you want to ignore unknown arguments.
 async def flags(ctx, **flags):
     await ctx.send("--count={count!r}, --string={string!r}, --user={user!r}, --thing={thing!r}".format(**flags))
 bot.add_command(flags)

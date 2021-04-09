@@ -44,11 +44,25 @@ def add_flag(*flag_names, **kwargs):
 
 
 class FlagCommand(commands.Command):
+    def __init__(self, func, **kwargs):
+        self.ignore_unknown_args = kwargs.pop("ignore_unknown_args", False)
+        super().__init__(func, **kwargs)
+
     async def _parse_flag_arguments(self, ctx):
         if not hasattr(self.callback, '_def_parser'):
             return
         arg = ctx.view.read_rest()
-        namespace = self.callback._def_parser.parse_args(shlex.split(arg), ctx=ctx)
+        try:
+            if self.ignore_unknown_args:
+                namespace, _ = self.callback._def_parser.parse_known_args(
+                    shlex.split(arg), ctx=ctx
+                )
+            else:
+                namespace = self.callback._def_parser.parse_args(
+                    shlex.split(arg), ctx=ctx
+                )
+        except ValueError:
+            raise commands.ExpectedClosingQuoteError("quote")
         flags = vars(namespace)
 
         async def do_convertion(value):
