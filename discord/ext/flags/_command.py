@@ -54,7 +54,7 @@ class FlagCommand(commands.Command):
         arg = ctx.view.read_rest()
         try:
             if self.ignore_unknown_args:
-                namespace, _ = self.callback._def_parser.parse_known_args(
+                namespace = self.callback._def_parser.parse_known_args(
                     shlex.split(arg), ctx=ctx
                 )
             else:

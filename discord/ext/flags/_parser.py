@@ -59,7 +59,3 @@ class DontExitArgumentParser(argparse.ArgumentParser):
     def parse_args(self, args, namespace=None, *, ctx):
         self.ctx = ctx
         return super().parse_args(args, namespace)
-
-    def parse_known_args(self, args, namespace=None, *, ctx):
-        self.ctx = ctx
-        return super().parse_known_args(args, namespace)
