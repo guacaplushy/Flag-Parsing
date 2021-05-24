@@ -17,14 +17,14 @@ argument = namedtuple("argument", "args kwargs")
 
 def command(**kwargs):
     def inner(func):
-        cls = kwargs.get('cls', FlagCommand)
+        cls = kwargs.pop('cls', FlagCommand)
         return cls(func, **kwargs)
     return inner
 
 
 def group(**kwargs):
     def inner(func):
-        cls = kwargs.get('cls', FlagGroup)
+        cls = kwargs.pop('cls', FlagGroup)
         return cls(func, **kwargs)
     return inner
 
