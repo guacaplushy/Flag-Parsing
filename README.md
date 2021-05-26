@@ -1,7 +1,6 @@
 This is an alternative to XuaTheGrate/Flag-Parsing, which is not maintained.
 
-⚠ Please be sure to read the entire README, it explains
-some important tricks.
+For support, please join https://discord.gg/dGAzZDaTS9.
 
 # Flag Parsing
 A util for discord.py bots that allow passing flags into commands.
