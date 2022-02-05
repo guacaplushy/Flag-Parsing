@@ -3,9 +3,9 @@ from collections import namedtuple
 import argparse
 import sys
 
-import discord
-from discord.ext import commands
-from discord.ext.commands import converter
+import nextcord as discord
+from nextcord.ext import commands
+from nextcord.ext.commands import converter
 
 from . import _parser
 
