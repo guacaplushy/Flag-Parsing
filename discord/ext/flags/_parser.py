@@ -3,8 +3,8 @@ import inspect
 import functools
 
 from collections import namedtuple
-from discord.utils import escape_mentions
-from discord.ext import commands
+from nextcord.utils import escape_mentions
+from nextcord.ext import commands
 
 ParserResult = namedtuple("ParserResult", "result action arg_string")
 
