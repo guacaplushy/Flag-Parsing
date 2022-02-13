@@ -13,7 +13,7 @@ setup(
     author="Circuit",
     version=version,
     url="https://github.com/CircuitsBots/Flag-Parsing",
-    packages=['discord.ext.flags'],
+    packages=['nextcord.ext.flags'],
     license='MIT',
     description="A Discord.py extension allowing you to pass flags as arguments.",
     long_description=readme,
